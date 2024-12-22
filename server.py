@@ -247,8 +247,7 @@ def orders_for_user(user_id):
     orders = user.orders
     return orders_schema.jsonify(orders), 200
 
-
-
+# Gets all products from order
 @app.route('/orders/<int:order_id>/products', methods=['GET'])
 def products_for_order(order_id):
     order = db.session.get(Order, order_id)
